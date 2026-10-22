@@ -1,7 +1,7 @@
 {
   "appStore": null,
   "support": null,
-  "privacy": null,
+  "privacy": "https://tuchkaapp.github.io/docs/privacy/",
   "terms": null,
   "brandApproved": false,
   "screenshotsApproved": false
