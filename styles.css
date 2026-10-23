@@ -10,3 +10,5 @@
 .phone-figure figcaption{bottom:-19px}
 @media(max-width:760px){.cloud-art{top:18px;left:0;width:82px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.site-footer{flex-wrap:wrap}.footer-docs{width:100%;display:flex;flex-wrap:wrap;gap:14px 24px;font-size:12px;line-height:1.6}.footer-docs a:hover{color:var(--blue)}

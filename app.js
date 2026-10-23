@@ -21,7 +21,7 @@ fetch('site.config.json')
   .then((config) => {
     document.querySelectorAll('[data-resource]').forEach((resource) => {
       const value = config[resource.dataset.resource];
-      if (typeof value !== 'string') return;
+      if (typeof value !== 'string' || resource.querySelector('a')) return;
       let url;
       try { url = new URL(value); } catch { return; }
       if (url.protocol !== 'https:') return;

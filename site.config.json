@@ -1,8 +1,9 @@
 {
   "appStore": null,
-  "support": null,
+  "support": "https://tuchkaapp.github.io/docs/support/",
   "privacy": "https://tuchkaapp.github.io/docs/privacy/",
-  "terms": null,
+  "terms": "https://tuchkaapp.github.io/docs/terms/",
   "brandApproved": false,
-  "screenshotsApproved": false
+  "screenshotsApproved": false,
+  "eula": "https://tuchkaapp.github.io/docs/eula/"
 }
