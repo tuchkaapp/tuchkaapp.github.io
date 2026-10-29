@@ -48,3 +48,34 @@ fetch('site.config.json')
     document.querySelector('[data-download-answer]').replaceChildren('Приложение доступно в App Store: ', link.cloneNode(true));
   })
   .catch(() => { /* Static navigation and document links do not depend on this request. */ });
+
+// The contact dialog is a preview: it does not send or persist entered data.
+const contactDialog = document.getElementById('contact-dialog');
+const contactForm = document.getElementById('contact-form');
+let contactOpener;
+function closeContact() {
+  contactDialog.close();
+  contactOpener?.focus();
+}
+document.querySelectorAll('[data-contact-open]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (typeof contactDialog.showModal !== 'function') return;
+    event.preventDefault();
+    closeMenu();
+    contactOpener = link;
+    contactDialog.showModal();
+    document.getElementById('contact-name').focus();
+  });
+});
+contactDialog.querySelector('.dialog-close').addEventListener('click', closeContact);
+contactDialog.addEventListener('click', (event) => {
+  if (event.target !== contactDialog) return;
+  const bounds = contactDialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeContact();
+});
+contactDialog.addEventListener('close', () => {
+  contactForm.reset();
+  contactOpener?.focus();
+});
+// Defensive guard: even implicit form submission must never leave the page.
+contactForm.addEventListener('submit', (event) => { event.preventDefault(); });
