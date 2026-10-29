@@ -52,6 +52,10 @@ fetch('site.config.json')
 // Contact details are prepared in a mail draft; the visitor sends it in their email app.
 const contactDialog = document.getElementById('contact-dialog');
 const contactForm = document.getElementById('contact-form');
+const contactIntro = document.getElementById('contact-intro');
+const contactReady = document.getElementById('contact-ready');
+const contactDraft = document.getElementById('contact-ready-mail');
+const contactDirect = document.getElementById('contact-direct');
 let contactOpener;
 function closeContact() {
   contactDialog.close();
@@ -68,6 +72,7 @@ document.querySelectorAll('[data-contact-open]').forEach((link) => {
   });
 });
 contactDialog.querySelector('.dialog-close').addEventListener('click', closeContact);
+contactDialog.querySelector('[data-contact-done]').addEventListener('click', closeContact);
 contactDialog.addEventListener('click', (event) => {
   if (event.target !== contactDialog) return;
   const bounds = contactDialog.getBoundingClientRect();
@@ -76,7 +81,13 @@ contactDialog.addEventListener('click', (event) => {
 contactDialog.addEventListener('close', () => {
   contactForm.reset();
   document.getElementById('contact-name').setCustomValidity('');
-  document.getElementById('contact-status').textContent = '';
+  contactForm.hidden = false;
+  contactIntro.hidden = false;
+  contactDirect.hidden = false;
+  contactReady.hidden = true;
+  contactDraft.href = 'mailto:contact-support@tuchkapp.ru';
+  contactDialog.setAttribute('aria-labelledby', 'contact-dialog-title');
+  contactDialog.setAttribute('aria-describedby', 'contact-dialog-description');
   contactOpener?.focus();
 });
 contactForm.addEventListener('submit', (event) => {
@@ -88,9 +99,15 @@ contactForm.addEventListener('submit', (event) => {
   const subject = 'B2B-заявка — Тучка';
   const body = 'Здравствуйте! Хочу обсудить использование Тучки для команды.\n\nИмя: '
     + nameInput.value.trim() + '\nРабочая почта: ' + emailInput.value.trim();
-  window.location.href = 'mailto:contact-support@tuchkapp.ru?subject='
+  contactDraft.href = 'mailto:contact-support@tuchkapp.ru?subject='
     + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  document.getElementById('contact-status').textContent = 'Письмо подготовлено для почтового приложения. Отправьте его, чтобы связаться с нами. Если приложение не открылось, напишите на contact-support@tuchkapp.ru.';
+  contactForm.hidden = true;
+  contactIntro.hidden = true;
+  contactDirect.hidden = true;
+  contactReady.hidden = false;
+  contactDialog.setAttribute('aria-labelledby', 'contact-ready-title');
+  contactDialog.setAttribute('aria-describedby', 'contact-ready-description');
+  document.getElementById('contact-ready-title').focus();
 });
 document.getElementById('contact-name').addEventListener('input', (event) => {
   event.target.setCustomValidity('');

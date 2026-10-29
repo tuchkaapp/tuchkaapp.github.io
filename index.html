@@ -53,20 +53,26 @@
 <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title" aria-describedby="contact-dialog-description">
 <div class="contact-dialog-content">
 <button class="dialog-close" type="button" aria-label="Закрыть форму">×</button>
-<p class="eyebrow">ТУЧКА ДЛЯ БИЗНЕСА</p>
+<div id="contact-intro"><p class="eyebrow">ТУЧКА ДЛЯ БИЗНЕСА</p>
 <h2 id="contact-dialog-title">Хочу подключить Тучку</h2>
-<p id="contact-dialog-description">Обсудим, как использовать Тучку для задач вашей команды.</p>
+<p id="contact-dialog-description">Обсудим, как использовать Тучку для задач вашей команды.</p></div>
 <form id="contact-form" method="dialog" aria-describedby="contact-form-note">
 <label for="contact-name">Ваше имя <span aria-hidden="true">*</span></label>
 <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Введите имя" required maxlength="100">
 <label for="contact-email">Рабочая почта <span aria-hidden="true">*</span></label>
 <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@company.ru" required maxlength="254">
-<button class="button button-blue contact-submit" type="submit">Отправить по почте <span aria-hidden="true">↗</span></button>
-<p class="form-preview-note" id="contact-form-note">Кнопка откроет ваше почтовое приложение с письмом на contact-support@tuchkapp.ru. Проверьте письмо и отправьте его.</p>
-<p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+<button class="button button-blue contact-submit" type="submit">Подготовить письмо <span aria-hidden="true">↗</span></button>
+<p class="form-preview-note" id="contact-form-note">Подготовим письмо на contact-support@tuchkapp.ru. Затем откройте его в почтовом приложении и отправьте.</p>
 <p class="form-privacy">Подробнее о данных — в <a href="docs/privacy/" target="_blank" rel="noopener">Политике конфиденциальности</a>.</p>
 </form>
-<p class="form-direct">Или напишите нам: <a href="mailto:contact-support@tuchkapp.ru">contact-support@tuchkapp.ru</a></p>
+<div class="contact-ready" id="contact-ready" hidden>
+<span class="ready-mark" aria-hidden="true">✓</span>
+<h2 id="contact-ready-title" tabindex="-1">Письмо подготовлено</h2>
+<p id="contact-ready-description">Откройте письмо в почтовом приложении, проверьте контакты и отправьте его. После отправки мы сможем ответить на вашу почту.</p>
+<a class="ready-mail" id="contact-ready-mail" href="mailto:contact-support@tuchkapp.ru">Открыть письмо <span aria-hidden="true">↗</span></a>
+<button class="button button-blue ready-done" type="button" data-contact-done>Понятно</button>
+</div>
+<p class="form-direct" id="contact-direct">Или напишите нам: <a href="mailto:contact-support@tuchkapp.ru">contact-support@tuchkapp.ru</a></p>
 </div>
 </dialog>
 </body></html>
