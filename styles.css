@@ -7,7 +7,7 @@
 /* B2B contact dialog */
 body:has(.contact-dialog[open]){overflow:hidden}
 .contact-dialog{width:min(600px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:0;border:1px solid var(--line);border-radius:24px;background:#fff;color:var(--ink);box-shadow:0 28px 100px #18223438;overscroll-behavior:contain}
-.contact-dialog::backdrop{background:#17243d80;backdrop-filter:blur(5px)}
+.contact-dialog::backdrop{background:#20272699}
 .contact-dialog-content{padding:42px;position:relative}
 .contact-dialog .eyebrow{color:var(--blue);font-size:9px;margin-bottom:17px}
 .contact-dialog h2{font-size:34px;line-height:1.13;letter-spacing:-1.2px;padding-right:20px}
@@ -39,9 +39,9 @@ body:has(.contact-dialog[open]){overflow:hidden}
 .contact-dialog .form-status{color:var(--muted)}
 
 .contact-ready{padding-top:6px}
-.ready-mark{display:grid;place-items:center;width:68px;height:68px;margin-bottom:27px;border-radius:50%;background:var(--blue);color:white;font-size:36px;font-weight:400;box-shadow:inset 0 0 0 2px #ffffff25,0 5px 18px #2c5de51a}
+.ready-mark{display:grid;place-items:center;width:68px;height:68px;margin-bottom:27px;border-radius:50%;background:#199aa7;color:white;font-size:36px;font-weight:400;box-shadow:inset 0 0 0 2px #ffffff25,0 5px 18px #199aa71a}
 .contact-ready h2{padding-right:0}.contact-ready h2:focus{outline:none}
 .contact-ready>p{font-size:16px;color:var(--muted);line-height:1.7;margin-top:22px}
-.ready-mail{display:inline-flex;gap:25px;align-items:center;color:var(--blue);font-size:14px;font-weight:500;margin-top:24px;text-decoration:underline;text-underline-offset:4px}
+.ready-done.button-blue{background:#2c2c2c;color:#fff}.ready-done.button-blue:hover{background:#444}
 .ready-done{width:100%;justify-content:center;border:0;cursor:pointer;margin-top:28px;font-size:15px;min-height:58px;border-radius:30px}
 @media(max-width:600px){.ready-mark{width:58px;height:58px;font-size:31px;margin-bottom:24px}.contact-ready>p{font-size:14px;margin-top:19px}.ready-done{margin-top:24px}}

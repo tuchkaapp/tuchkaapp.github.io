@@ -49,12 +49,11 @@ fetch('site.config.json')
   })
   .catch(() => { /* Static navigation and document links do not depend on this request. */ });
 
-// Contact details are prepared in a mail draft; the visitor sends it in their email app.
+// Demo form: validate locally and show a confirmation without transmitting or storing details.
 const contactDialog = document.getElementById('contact-dialog');
 const contactForm = document.getElementById('contact-form');
 const contactIntro = document.getElementById('contact-intro');
 const contactReady = document.getElementById('contact-ready');
-const contactDraft = document.getElementById('contact-ready-mail');
 const contactDirect = document.getElementById('contact-direct');
 let contactOpener;
 function closeContact() {
@@ -85,7 +84,6 @@ contactDialog.addEventListener('close', () => {
   contactIntro.hidden = false;
   contactDirect.hidden = false;
   contactReady.hidden = true;
-  contactDraft.href = 'mailto:contact-support@tuchkapp.ru';
   contactDialog.setAttribute('aria-labelledby', 'contact-dialog-title');
   contactDialog.setAttribute('aria-describedby', 'contact-dialog-description');
   contactOpener?.focus();
@@ -93,14 +91,8 @@ contactDialog.addEventListener('close', () => {
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const nameInput = document.getElementById('contact-name');
-  const emailInput = document.getElementById('contact-email');
   nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Введите имя.');
   if (!contactForm.reportValidity()) return;
-  const subject = 'B2B-заявка — Тучка';
-  const body = 'Здравствуйте! Хочу обсудить использование Тучки для команды.\n\nИмя: '
-    + nameInput.value.trim() + '\nРабочая почта: ' + emailInput.value.trim();
-  contactDraft.href = 'mailto:contact-support@tuchkapp.ru?subject='
-    + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   contactForm.hidden = true;
   contactIntro.hidden = true;
   contactDirect.hidden = true;
