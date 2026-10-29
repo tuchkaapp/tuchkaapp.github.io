@@ -49,7 +49,7 @@ fetch('site.config.json')
   })
   .catch(() => { /* Static navigation and document links do not depend on this request. */ });
 
-// The contact dialog is a preview: it does not send or persist entered data.
+// Contact details are prepared in a mail draft; the visitor sends it in their email app.
 const contactDialog = document.getElementById('contact-dialog');
 const contactForm = document.getElementById('contact-form');
 let contactOpener;
@@ -75,7 +75,23 @@ contactDialog.addEventListener('click', (event) => {
 });
 contactDialog.addEventListener('close', () => {
   contactForm.reset();
+  document.getElementById('contact-name').setCustomValidity('');
+  document.getElementById('contact-status').textContent = '';
   contactOpener?.focus();
 });
-// Defensive guard: even implicit form submission must never leave the page.
-contactForm.addEventListener('submit', (event) => { event.preventDefault(); });
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Введите имя.');
+  if (!contactForm.reportValidity()) return;
+  const subject = 'B2B-заявка — Тучка';
+  const body = 'Здравствуйте! Хочу обсудить использование Тучки для команды.\n\nИмя: '
+    + nameInput.value.trim() + '\nРабочая почта: ' + emailInput.value.trim();
+  window.location.href = 'mailto:contact-support@tuchkapp.ru?subject='
+    + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  document.getElementById('contact-status').textContent = 'Письмо подготовлено для почтового приложения. Отправьте его, чтобы связаться с нами. Если приложение не открылось, напишите на contact-support@tuchkapp.ru.';
+});
+document.getElementById('contact-name').addEventListener('input', (event) => {
+  event.target.setCustomValidity('');
+});

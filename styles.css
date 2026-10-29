@@ -35,3 +35,5 @@ body:has(.contact-dialog[open]){overflow:hidden}
 @media(max-width:600px){.contact-dialog{border-radius:20px}.contact-dialog-content{padding:30px 23px}.contact-dialog h2{font-size:29px;letter-spacing:-1px;padding-right:12px}.contact-dialog .eyebrow{font-size:8px;margin-bottom:16px}#contact-dialog-description{font-size:14px;margin-top:16px}.dialog-close{right:10px;top:9px}#contact-form{margin-top:23px}#contact-form>label{font-size:13px}.form-privacy{font-size:10px}.form-direct{font-size:11px}}
 
 .form-preview-note{font-size:12px;color:var(--muted);line-height:1.65;margin-top:16px}
+
+.contact-dialog .form-status{color:var(--muted)}
