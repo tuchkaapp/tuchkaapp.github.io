@@ -47,3 +47,5 @@ body:has(.contact-dialog[open]){overflow:hidden}
 .ready-done.button-blue{background:var(--blue);color:#fff}.ready-done.button-blue:hover{background:#244bc7}
 .ready-done{width:100%;justify-content:space-between;border:0;cursor:pointer;margin-top:28px;font-size:15px;min-height:58px;border-radius:16px;padding-inline:24px}
 @media(max-width:600px){.ready-mark{width:62px;height:62px;border-radius:19px;margin-bottom:24px}.contact-ready>#contact-ready-description{font-size:14px;margin-top:18px}.ready-done{margin-top:24px}}
+
+.contact-challenge{margin-top:22px;min-height:65px;max-width:100%}
