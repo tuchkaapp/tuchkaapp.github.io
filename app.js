@@ -121,7 +121,7 @@ async function ensureContactChallenge(){
       });
     }
     captchaWidget=window.turnstile.render('#contact-challenge',{sitekey:contactConfig.turnstileSiteKey,action:'contact',theme:'light',size:'flexible',
-      callback:(token)=>{captchaToken=token;contactStatus.textContent='';},
+      callback:(token)=>{captchaToken=token;},
       'expired-callback':()=>{captchaToken='';},
       'error-callback':()=>{captchaToken='';contactStatus.textContent='Проверка не загрузилась. Закройте форму и попробуйте ещё раз.';}});
   }catch{contactStatus.textContent='Отправка временно недоступна. Напишите на contact-support@tuchkapp.ru.';}
