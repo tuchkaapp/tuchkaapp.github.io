@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f7fb">
 <meta name="description" content="Тучка — приложение для работы с файлами на iOS. Документы, фотографии и видео, папки, просмотр, скачивание и обмен ссылками для повседневных задач команды.">
 <meta name="robots" content="noindex, nofollow"><meta property="og:title" content="Тучка — рабочие файлы под рукой"><meta property="og:description" content="Документы, фото и видео для повседневной работы вашей команды."><meta property="og:type" content="website"><meta property="og:url" content="https://tuchkapp.ru/">
-<link rel="canonical" href="https://tuchkapp.ru/"><link rel="icon" href="assets/app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/app-icon.png"><link rel="stylesheet" href="styles.css?v=20261030-live-mail-fix"><script type="module" src="app.js?v=20261030-live-mail-fix"></script>
+<link rel="canonical" href="https://tuchkapp.ru/"><link rel="icon" href="assets/app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/app-icon.png"><link rel="stylesheet" href="styles.css?v=20261030-local-confirmation"><script defer src="app.js?v=20261030-local-confirmation"></script>
 <title>Тучка — рабочие файлы под рукой</title>
 </head>
 <body>
@@ -56,16 +56,13 @@
 <div id="contact-intro"><p class="eyebrow">ТУЧКА ДЛЯ БИЗНЕСА</p>
 <h2 id="contact-dialog-title">Хочу подключить Тучку</h2>
 <p id="contact-dialog-description">Обсудим, как использовать Тучку для задач вашей команды.</p></div>
-<form id="contact-form" method="dialog" aria-describedby="contact-status">
+<form id="contact-form" method="dialog">
 <label for="contact-name">Ваше имя <span aria-hidden="true">*</span></label>
 <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Введите имя" required maxlength="100">
 <label for="contact-email">Рабочая почта <span aria-hidden="true">*</span></label>
 <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@company.ru" required maxlength="254">
-<input type="checkbox" id="contact-botcheck" name="botcheck" class="form-honeypot" tabindex="-1" aria-hidden="true">
-<div id="contact-challenge" class="contact-challenge"></div>
 <button class="button button-blue contact-submit" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button>
-<p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
-<p class="form-privacy">Нажимая «Отправить заявку», вы соглашаетесь на обработку имени и почты для ответа на обращение. Подробнее — в <a href="docs/privacy/" target="_blank" rel="noopener">Политике конфиденциальности</a>.</p>
+<p class="form-privacy">Подробнее о данных — в <a href="docs/privacy/" target="_blank" rel="noopener">Политике конфиденциальности</a>.</p>
 </form>
 <div class="contact-ready" id="contact-ready" hidden>
 <img class="ready-mark" src="assets/app-icon.png" width="72" height="72" alt="">

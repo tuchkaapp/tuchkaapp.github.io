@@ -5,7 +5,5 @@
   "terms": "https://tuchkapp.ru/docs/terms/",
   "brandApproved": false,
   "screenshotsApproved": false,
-  "eula": "https://tuchkapp.ru/docs/eula/",
-  "contactEndpoint": "https://tuchka-contact-api.eveoks.workers.dev/contact",
-  "turnstileSiteKey": "0x4AAAAAAFra0p7MZIqx2JS0"
+  "eula": "https://tuchkapp.ru/docs/eula/"
 }
