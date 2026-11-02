@@ -20,17 +20,6 @@ document.addEventListener('keydown', (event) => {
     menuButton.focus();
   }
 });
-// These images are labelled interface concepts, not released app screenshots.
-const screenButtons = document.querySelectorAll('[data-screen]');
-screenButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    screenButtons.forEach((item) => {
-      const selected = item === button;
-      item.setAttribute('aria-pressed', String(selected));
-      document.getElementById('screen-' + item.dataset.screen).hidden = !selected;
-    });
-  });
-});
 // A real App Store URL can be configured later without changing the layout.
 fetch('site.config.json')
   .then((response) => {
