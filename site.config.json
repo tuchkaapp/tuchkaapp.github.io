@@ -4,6 +4,6 @@
   "privacy": "https://tuchkapp.ru/docs/privacy/",
   "terms": "https://tuchkapp.ru/docs/terms/",
   "brandApproved": false,
-  "screenshotsApproved": false,
+  "screenshotsApproved": true,
   "eula": "https://tuchkapp.ru/docs/eula/"
 }
