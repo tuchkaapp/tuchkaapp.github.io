@@ -1,0 +1,10 @@
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#182234;background:#fff;font-synthesis:none;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;-webkit-font-smoothing:antialiased}a{color:#2c5de5;text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #2c5de5;outline-offset:5px}
+header,main{width:min(860px,calc(100% - 64px));margin-inline:auto}
+header{display:flex;flex-direction:column;align-items:center;gap:22px;padding-block:28px;border-bottom:1px solid #e5e7eb}
+.brand{color:#182234;font-size:25px;font-weight:650;letter-spacing:-.9px;text-decoration:none;line-height:1}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 26px;font-size:12px}nav a{color:#687387;text-decoration:none}nav a:hover,nav a[aria-current=page]{color:#2c5de5}
+main{padding-block:56px 80px}h1{font-size:clamp(32px,4.4vw,46px);line-height:1.15;letter-spacing:-1.5px;margin:0 0 22px;overflow-wrap:anywhere}h2{font-size:23px;line-height:1.35;letter-spacing:-.4px;margin:0 0 16px;scroll-margin-top:28px}
+p,li{font-size:16px;line-height:1.8}p{margin:0 0 18px}.intro{font-size:18px;line-height:1.7}.meta,.publisher{color:#687387;font-size:13px;line-height:1.8}.publisher{overflow-wrap:anywhere}article{margin-top:42px}section+section{margin-top:34px}section>p:last-child{margin-bottom:0}ul{padding-left:22px;margin-block:0 20px}li+li{margin-top:7px}.contact{display:inline-block;font-size:clamp(17px,2.7vw,24px);font-weight:600;margin-bottom:20px}.skip{position:absolute;left:20px;top:-100px;background:#fff;padding:12px}.skip:focus{top:12px}
+@media(max-width:760px){header,main{width:calc(100% - 40px)}header{gap:20px;padding-block:24px}nav{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;font-size:10px;text-align:center;width:100%}main{padding-block:36px 54px}h1{font-size:32px;letter-spacing:-1px}h2{font-size:21px}.intro{font-size:16px}p,li{font-size:15px}.meta,.publisher{font-size:12px}article{margin-top:32px}}
+@media print{header{display:none}main{width:100%;padding:0}a{color:inherit}}
