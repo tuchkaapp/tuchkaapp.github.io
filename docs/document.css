@@ -1,7 +1,7 @@
 :root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#182234;background:#fff;font-synthesis:none;color-scheme:light}
 *{box-sizing:border-box}body{margin:0;-webkit-font-smoothing:antialiased}a{color:#2c5de5;text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #2c5de5;outline-offset:5px}
 main{width:min(860px,calc(100% - 64px));margin-inline:auto}header{width:min(1200px,calc(100% - 112px));margin-inline:auto}
-header{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-block:25px;min-height:106px;border-bottom:1px solid #e5e7eb}
+header{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-block:25px;min-height:106px;border-bottom:0}
 .brand{display:inline-flex;align-items:center;gap:11px;flex-shrink:0;color:#182234;font-size:25px;font-weight:650;letter-spacing:-.9px;text-decoration:none;line-height:1}
 .brand img{display:block;width:42px;height:42px;border-radius:26%}nav{display:flex;justify-content:flex-end;margin-left:auto;min-width:0;flex-wrap:wrap;gap:14px 26px;font-size:13px}nav a{color:#687387;text-decoration:none}nav a:hover,nav a[aria-current=page]{color:#2c5de5}
 main{padding-block:56px 80px}h1{font-size:clamp(32px,4.4vw,46px);line-height:1.15;letter-spacing:-1.5px;margin:0 0 22px;overflow-wrap:anywhere}h2{font-size:23px;line-height:1.35;letter-spacing:-.4px;margin:0 0 16px;scroll-margin-top:28px}
