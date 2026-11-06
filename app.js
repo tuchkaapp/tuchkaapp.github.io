@@ -1,43 +1,5 @@
 'use strict';
 document.documentElement.classList.add('js');
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.getElementById('site-nav');
-function closeMenu() {
-  menuButton.setAttribute('aria-expanded', 'false');
-  navigation.dataset.open = 'false';
-}
-menuButton.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(open));
-  navigation.dataset.open = String(open);
-});
-navigation.addEventListener('click', (event) => {
-  if (event.target.closest('a')) closeMenu();
-});
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
-    closeMenu();
-    menuButton.focus();
-  }
-});
-// A real App Store URL can be configured later without changing the layout.
-fetch('site.config.json')
-  .then((response) => {
-    if (!response.ok) throw new Error('Site configuration unavailable');
-    return response.json();
-  })
-  .then((config) => {
-    if (typeof config.appStore !== 'string') return;
-    const url = new URL(config.appStore);
-    if (url.protocol !== 'https:' || url.hostname !== 'apps.apple.com') return;
-    const link = document.createElement('a');
-    link.href = url.href;
-    link.textContent = 'Тучка в App Store ↗';
-    document.querySelector('[data-app-store]').replaceChildren(link);
-    document.querySelector('[data-download-answer]').replaceChildren('Приложение доступно в App Store: ', link.cloneNode(true));
-  })
-  .catch(() => { /* Static navigation and document links do not depend on this request. */ });
-
 // Local confirmation only. No contact data is transmitted or persisted.
 const contactDialog = document.getElementById('contact-dialog');
 const contactForm = document.getElementById('contact-form');
@@ -53,7 +15,6 @@ document.querySelectorAll('[data-contact-open]').forEach((link) => {
   link.addEventListener('click', (event) => {
     if (typeof contactDialog.showModal !== 'function') return;
     event.preventDefault();
-    closeMenu();
     contactOpener = link;
     contactDialog.showModal();
     document.getElementById('contact-name').focus();
@@ -80,7 +41,7 @@ contactDialog.addEventListener('close', () => {
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const nameInput = document.getElementById('contact-name');
-  nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Введите имя.');
+  nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Введите имя');
   if (!contactForm.reportValidity()) return;
   contactForm.hidden = true;
   contactIntro.hidden = true;

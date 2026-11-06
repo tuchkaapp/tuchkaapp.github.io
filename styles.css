@@ -61,3 +61,14 @@ body:has(.contact-dialog[open]){overflow:hidden}
 .phone-stage.real-gallery{aspect-ratio:852/1846}.phone-stage.real-gallery img{width:100%;height:auto;border:6px solid #1d2940;border-radius:36px;box-shadow:0 16px 35px #233e6a20}.product-visual:has(.real-gallery){min-height:680px}
 @media(max-width:1050px){.product-visual:has(.real-gallery){min-height:650px}}
 @media(max-width:760px){.product-visual:has(.real-gallery){min-height:610px}.phone-stage.real-gallery img{border-radius:33px}}
+
+/* The landing page contains only the opening screen. */
+.single-screen .landing-header{display:flex;flex-direction:column;justify-content:center;gap:22px;padding-block:25px;min-height:132px}
+.landing-header .brand{align-self:center}
+.document-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:16px 30px;font-size:13px;color:var(--muted)}
+.document-nav a:hover{color:var(--blue)}
+.single-screen .hero{min-height:calc(100svh - 132px)}
+.single-screen h1{font-size:clamp(46px,4.8vw,68px);letter-spacing:-2.8px;line-height:1.08;margin-top:0}
+.single-screen .hero-description{max-width:440px}
+@media(max-width:1050px){.single-screen h1{font-size:clamp(43px,5.2vw,55px);letter-spacing:-2px}}
+@media(max-width:760px){.single-screen .landing-header{gap:18px;padding-block:22px;min-height:132px}.document-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;width:100%;font-size:10px;text-align:center}.single-screen .hero{min-height:calc(100svh - 132px)}.single-screen h1{font-size:clamp(39px,9.6vw,64px);letter-spacing:-1.7px;line-height:1.1}.single-screen .hero-copy .button{gap:22px}}
