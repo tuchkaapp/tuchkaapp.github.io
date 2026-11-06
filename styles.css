@@ -92,24 +92,20 @@ body:has(.contact-dialog[open]){overflow:hidden}
   padding-block: 56px 72px;
 }
 .pricing-page h1 {
+  text-align: center;
   font-size: clamp(36px, 4.3vw, 56px);
   letter-spacing: -2px;
   line-height: 1.12;
-}
-.pricing-intro {
-  max-width: 680px;
-  margin-top: 22px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.7;
 }
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 42px;
+  max-width: 1080px;
+  margin: 42px auto 0;
 }
 .price-card {
+  text-align: center;
   padding: 30px;
   background: #fff;
   border: 1px solid var(--line);
@@ -144,6 +140,7 @@ body:has(.contact-dialog[open]){overflow:hidden}
   font-size: 13px;
 }
 .price-upgrade {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -164,6 +161,7 @@ body:has(.contact-dialog[open]){overflow:hidden}
   margin-top: 28px;
 }
 .pricing-note {
+  text-align: center;
   margin-top: 26px;
   color: var(--muted);
   font-size: 13px;
@@ -178,7 +176,6 @@ body:has(.contact-dialog[open]){overflow:hidden}
 @media (max-width: 760px) {
   .pricing-main { padding-block: 32px 48px; }
   .pricing-page h1 { font-size: 38px; letter-spacing: -1.5px; }
-  .pricing-intro { font-size: 15px; }
   .pricing-grid { grid-template-columns: 1fr; margin-top: 28px; }
   .price-card { padding: 28px; }
   .price-card h2 { font-size: 23px; }
